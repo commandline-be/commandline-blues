@@ -5,7 +5,7 @@ today=`date +%d`
 month=`date +%m`
 years=`date +%y`
 date="$years"_"$month"_"$today"
-echo "$date"
+#echo "$date"
 
 mkdir -p ./tmp
 
@@ -18,5 +18,5 @@ mkdir -p ./tmp
 #./scripts/clean_ncsc_hunting.sh ./tmp/ncsc_hunting.csv
 #sed -i 's/|/\t/g' ./tmp/*.csv
 ssconvert -I Gnumeric_stf:stf_csvtab --merge-to=log4j_cve_2021_44228_$date.xlsx ./tmp/ncsc_ioc.csv ./tmp/ncsc_software.csv ./tmp/ncsc_scanning.csv ./tmp/ncsc_mitigations.csv ./tmp/ncsc_csirts.csv
-#rm -Rf ./tmp/*
+rm -Rf ./tmp/*
 xdg-open ./log4j_cve_2021_44228_"$date".xlsx
