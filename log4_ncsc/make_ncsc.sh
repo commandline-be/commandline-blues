@@ -7,6 +7,8 @@ years=`date +%y`
 date="$years"_"$month"_"$today"
 echo "$date"
 
+mkdir -p tmp
+
 ./scripts/get_ncsc.sh
 ./scripts/clean_ncsc_ioc.sh ./tmp/ncsc_ioc.csv
 ./scripts/clean_ncsc_software.sh ./tmp/ncsc_software.csv
